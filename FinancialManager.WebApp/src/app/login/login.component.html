@@ -1,0 +1,95 @@
+<mat-card class="col-12 col-sm-8 col-md-6 col-lg-6">
+    <mat-grid-list cols="2">
+        <mat-grid-tile class="leftGrid">
+            <img class="element-with-image" src="assets/login.jpg">
+        </mat-grid-tile>
+        <mat-grid-tile class="mx-auto rightGrid">
+            <div *ngIf="isLogin">
+                <form>
+                    <div class="col-12 mx-auto">
+                        <h1>Olá, seja Bem-Vindo(a)!</h1>
+
+                        <br>
+
+                        <mat-form-field class="col-10">
+                            <mat-label>EDigite seu Email</mat-label>
+                            <input matInput placeholder="Ex. email@gmail.com">
+                        </mat-form-field>
+
+                        <mat-form-field class="col-10">
+                            <mat-label>Digite sua Senha</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'">
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+
+                    <button mat-raised-button (click)="login()" class="btnLogin">Entrar</button>
+
+                    <br>
+                    <br>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <mat-divider class="col-10"></mat-divider>
+                    </div>
+                    <br>
+
+                    <button mat-raised-button (click)="register()">Registrar-se</button>
+
+                </form>
+            </div>
+            <div *ngIf="!isLogin">
+                <form (submit)="submitRegister()">
+                    <div class="col-12 mx-auto">
+                        <h1>Cadastre-se!</h1>
+                        <h3>Preencha o formulário abaixo!</h3>
+
+                        <br>
+
+                        <mat-form-field class="col-10">
+                            <mat-label>Digite seu Email</mat-label>
+                            <input matInput placeholder="Ex. email@gmail.com">
+                        </mat-form-field>
+
+                        <mat-form-field class="col-10">
+                            <mat-label>Digite sua Senha</mat-label>
+                            <input matInput [type]="hideRegisterPassword ? 'password' : 'text'">
+                            <button type="button" mat-icon-button matSuffix
+                                (click)="hideRegisterPassword = !hideRegisterPassword">
+                                <mat-icon>{{hideRegisterPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-10">
+                            <mat-label>Confirme sua Senha</mat-label>
+                            <input matInput [type]="hideRegisterConfirmPassword ? 'password' : 'text'">
+                            <button type="button" mat-icon-button matSuffix
+                                (click)="hideRegisterConfirmPassword = !hideRegisterConfirmPassword">
+                                <mat-icon>{{hideRegisterConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+
+                        <br>
+                        <br>
+
+                        <div class="col-12">
+                            <button mat-raised-button (click)="submitRegister()" class="btnLogin"
+                                type="submit">Cadastrar</button>
+
+                            <br>
+                            <br>
+                            <div class="col-12 d-flex justify-content-center align-items-center">
+                                <mat-divider class="col-10"></mat-divider>
+                            </div>
+                            <br>
+
+                            <button mat-raised-button (click)="isLogin = true">Cancelar</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

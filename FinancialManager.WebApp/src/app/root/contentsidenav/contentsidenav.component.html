@@ -1,0 +1,33 @@
+<div class="col-12">
+    <button mat-button class="col-12" (click)="openAll(true)" *ngIf="!isExpanded">
+        <mat-icon aria-hidden="false" class="material-symbols-rounded" fontIcon="expand_all"></mat-icon>
+    </button>
+    <button mat-button class="col-12" (click)="openAll(false)" *ngIf="isExpanded">
+        <mat-icon aria-hidden="false" class="material-symbols-rounded" fontIcon="collapse_all"></mat-icon>
+    </button>
+</div>
+<mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Cadastros 1
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Cadastros 2
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Cadastros 3
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+    </mat-expansion-panel>
+</mat-accordion>

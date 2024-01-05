@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+    <div class="col-1 alignLeft">
+        <button mat-icon-button (click)="toggleDrawer()">
+            <mat-icon aria-hidden="false" class="material-symbols-rounded" fontIcon="menu"></mat-icon>
+        </button>
+    </div>
+
+    <div class="col-10 my-auto alignRight">
+        <form [formGroup]="form">
+            <mat-form-field class="col-1">
+                <mat-label>Ano</mat-label>
+                <input matInput formControlName="year" #postalCode minlength="4" maxlength="4">
+            </mat-form-field>
+            <mat-form-field class="col-2">
+                <mat-label>Mês</mat-label>
+                <mat-select formControlName="month">
+                    @for (month of months; track month) {
+                    <mat-option [value]="month.value">{{month.viewValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-3">
+                <mat-label for="userSelector">Usuários</mat-label>
+                <mat-select class="my-select" name="userSelector" formControlName="user">
+                    @for (food of foods; track food) {
+                    <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+        </form>
+    </div>
+
+    <div class="col-1 alignRight">
+        <button mat-icon-button (click)="logout()">
+            <mat-icon aria-hidden="false" class="material-symbols-rounded" fontIcon="logout"></mat-icon>
+        </button>
+    </div>
+
+</mat-toolbar>

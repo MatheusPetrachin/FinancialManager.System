@@ -1,0 +1,28 @@
+mat-card {
+    background-color: #ffffff9c;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+    /* Adicione esta linha para incluir padding e borda na largura total */
+}
+
+.leftGrid {
+    background-color: #5AAC62;
+}
+
+.rightGrid {
+    text-align: center;
+}
+
+.element-with-image {
+    height: 100%;
+}
+
+.btnLogin {
+    background-color: #5AAC62 !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
+}
